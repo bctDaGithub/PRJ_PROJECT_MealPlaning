@@ -94,7 +94,7 @@ CREATE TABLE MealPlans (
 );
 
 -- Thêm dữ liệu vào bảng Dishes
-INSERT INTO Dishes (name, description, calories, estimated_price, ingredients, method, image_path)
+INSERT INTO Dishes (name, description, calories, estimatedPrice, ingredients, method, imagePath)
 VALUES
     ('Grilled Chicken Salad', 'Grilled chicken, fresh greens, cherry tomatoes, and vinaigrette.', 300, 100000, '200g chicken, 200g fresh greens, 100g cherry tomatoes, 3 tablespoons vinaigrette.', 'Grill chicken, mix with greens and vinaigrette.', 'imageDishs/image1.jpg'),
     ('Quinoa and Black Bean Bowl (Vegan)', 'Quinoa, black beans, corn, avocado, and lime dressing.', 350, 80000, '100g quinoa, 200g black beans, 100g corn, 1 avocado, lime juice.', 'Cook quinoa, mix with beans, corn, avocado, and lime juice.', 'imageDishs/image2.jpg'),
