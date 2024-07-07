@@ -1,96 +1,96 @@
---Execute cái này trước
+-- Execute this first
 CREATE DATABASE MealPlanningDB;
 
---Execute cái này đã
+-- Execute this next
 USE MealPlanningDB;
 
--- Bảng Users
+-- Users table
 CREATE TABLE Users (
-    user_id INT PRIMARY KEY IDENTITY,
+    userId INT PRIMARY KEY IDENTITY,
     userName NVARCHAR(50) NOT NULL,
     password NVARCHAR(50) NOT NULL,
     fullName NVARCHAR(50) NOT NULL,
     email NVARCHAR(100) NOT NULL,
     phone NVARCHAR(15) NOT NULL,
     status NVARCHAR(10) NOT NULL,
-    created_at DATETIME NOT NULL
+    createdAt DATETIME NOT NULL
 );
 
--- Bảng Customers
+-- Customers table
 CREATE TABLE Customers (
-    user_id INT PRIMARY KEY,
+    userId INT PRIMARY KEY,
     address NVARCHAR(255),
-    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+    FOREIGN KEY (userId) REFERENCES Users(userId)
 );
 
--- Bảng Staff
+-- Staff table
 CREATE TABLE Staff (
-    user_id INT PRIMARY KEY,
+    userId INT PRIMARY KEY,
     position NVARCHAR(50) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+    FOREIGN KEY (userId) REFERENCES Users(userId)
 );
 
--- Bảng Dishes
+-- Dishes table
 CREATE TABLE Dishes (
     id INT IDENTITY PRIMARY KEY,
     name VARCHAR(255),
     description TEXT,
     calories INT,
-    estimated_price INT,
+    estimatedPrice INT,
     ingredients TEXT,
     method TEXT,
-    image_path VARCHAR(255)
+    imagePath VARCHAR(255)
 );
 
--- Bảng Menu
+-- Menu table
 CREATE TABLE Menu (
-    menu_id INT PRIMARY KEY IDENTITY,
+    menuId INT PRIMARY KEY IDENTITY,
     name NVARCHAR(100) NOT NULL,
     description NVARCHAR(MAX),
-    week_number INT NOT NULL,
-    user_id INT NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+    weekNumber INT NOT NULL,
+    userId INT NOT NULL,
+    FOREIGN KEY (userId) REFERENCES Users(userId)
 );
 
--- Bảng liên kết giữa Menu và Dishes
+-- Linking table between Menu and Dishes
 CREATE TABLE MenuDishes (
-    menu_id INT NOT NULL,
-    dish_id INT NOT NULL,
-    PRIMARY KEY (menu_id, dish_id),
-    FOREIGN KEY (menu_id) REFERENCES Menu(menu_id),
-    FOREIGN KEY (dish_id) REFERENCES Dishes(id)
+    menuId INT NOT NULL,
+    dishId INT NOT NULL,
+    PRIMARY KEY (menuId, dishId),
+    FOREIGN KEY (menuId) REFERENCES Menu(menuId),
+    FOREIGN KEY (dishId) REFERENCES Dishes(id)
 );
 
--- Bảng Orders
+-- Orders table
 CREATE TABLE Orders (
-    orderID INT PRIMARY KEY IDENTITY,
+    orderId INT PRIMARY KEY IDENTITY,
     orderDate DATETIME NOT NULL,
     status NVARCHAR(50),
     total DECIMAL(10, 2),
-    user_id INT NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+    userId INT NOT NULL,
+    FOREIGN KEY (userId) REFERENCES Users(userId)
 );
 
--- Bảng OrderDetails
+-- OrderDetails table
 CREATE TABLE OrderDetails (
-    detailID INT PRIMARY KEY IDENTITY,
-    dishID INT NOT NULL,
-    orderID INT NOT NULL,
+    detailId INT PRIMARY KEY IDENTITY,
+    dishId INT NOT NULL,
+    orderId INT NOT NULL,
     quantity INT NOT NULL,
-    FOREIGN KEY (dishID) REFERENCES Dishes(id),
-    FOREIGN KEY (orderID) REFERENCES Orders(orderID)
+    FOREIGN KEY (dishId) REFERENCES Dishes(id),
+    FOREIGN KEY (orderId) REFERENCES Orders(orderId)
 );
 
--- Bảng MealPlans
+-- MealPlans table
 CREATE TABLE MealPlans (
-    meal_plan_id INT PRIMARY KEY IDENTITY,
-    user_id INT NOT NULL,
-    week_starting DATE NOT NULL,
-    meal_time NVARCHAR(50) NOT NULL,
-    day_of_week NVARCHAR(50) NOT NULL,
-    dish_id INT NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES Users(user_id),
-    FOREIGN KEY (dish_id) REFERENCES Dishes(id)
+    mealPlanId INT PRIMARY KEY IDENTITY,
+    userId INT NOT NULL,
+    weekStarting DATE NOT NULL,
+    mealTime NVARCHAR(50) NOT NULL,
+    dayOfWeek NVARCHAR(50) NOT NULL,
+    dishId INT NOT NULL,
+    FOREIGN KEY (userId) REFERENCES Users(userId),
+    FOREIGN KEY (dishId) REFERENCES Dishes(id)
 );
 
 -- Thêm dữ liệu vào bảng Dishes
