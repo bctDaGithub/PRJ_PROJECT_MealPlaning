@@ -4,6 +4,24 @@ CREATE DATABASE MealPlanningDB;
 -- Execute this next
 USE MealPlanningDB;
 
+-------------------------------------------------------------------
+-- Users table
+CREATE TABLE Users (
+    userId INT PRIMARY KEY IDENTITY(1,1),
+    userName NVARCHAR(50) NOT NULL,
+    fullName NVARCHAR(50) NOT NULL,
+    password NVARCHAR(50) NOT NULL,
+    roleid INT NOT NULL,
+    image NVARCHAR(50) NULL,
+    email NVARCHAR(100) NOT NULL,
+    birthday DATE NOT NULL,
+    address NVARCHAR(255),
+    phone NVARCHAR(15) NOT NULL,
+    status BIT NOT NULL,
+);
+
+
+--------------------------------------------------------------------
 -- Users table
 CREATE TABLE Users (
     userId INT PRIMARY KEY IDENTITY,
@@ -29,7 +47,7 @@ CREATE TABLE Staff (
     position NVARCHAR(50) NOT NULL,
     FOREIGN KEY (userId) REFERENCES Users(userId)
 );
-
+------------------------------------------------------------------
 -- Dishes table
 CREATE TABLE Dishes (
     id INT IDENTITY PRIMARY KEY,
