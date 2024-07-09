@@ -7,17 +7,17 @@ USE MealPlanningDB;
 -------------------------------------------------------------------
 -- Users table
 CREATE TABLE Users (
-    userId INT PRIMARY KEY IDENTITY(1,1),
-    userName NVARCHAR(50) NOT NULL,
-    fullName NVARCHAR(50) NOT NULL,
-    password NVARCHAR(50) NOT NULL,
-    roleid INT NOT NULL,
-    image NVARCHAR(50) NULL,
-    email NVARCHAR(100) NOT NULL,
-    birthday DATE NOT NULL,
-    address NVARCHAR(255),
-    phone NVARCHAR(15) NOT NULL,
-    status BIT NOT NULL,
+    UserId INT PRIMARY KEY IDENTITY(1,1),
+    UserName NVARCHAR(50) NOT NULL,
+    FullName NVARCHAR(50) NOT NULL,
+    Password NVARCHAR(50) NOT NULL,
+    RoleID INT NOT NULL,
+    Image NVARCHAR(50) NULL,
+    Email NVARCHAR(100) NOT NULL,
+    Birthday DATE NOT NULL,
+    Address NVARCHAR(255),
+    Phone NVARCHAR(15) NOT NULL,
+    Status BIT NOT NULL,
 );
 
 
