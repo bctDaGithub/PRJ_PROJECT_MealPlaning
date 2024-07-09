@@ -17,7 +17,7 @@ CREATE TABLE Users (
     Birthday DATE NOT NULL,
     Address NVARCHAR(255),
     Phone NVARCHAR(15) NOT NULL,
-    Status BIT NOT NULL,
+    status BIT NOT NULL,
 );
 
 
