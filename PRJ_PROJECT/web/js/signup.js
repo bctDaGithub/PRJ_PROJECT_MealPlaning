@@ -1,11 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById('signup-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        validateInputs();
-    });
+    const signupForm = document.getElementById('signup-form');
+
+    if (signupForm) {
+        signupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            validateInputs(signupForm);
+        });
+    }
 });
 
-const validateInputs = () => {
+const validateInputs = (form) => {
     const form = document.getElementById('signup-form');  // Định nghĩa biến form
     const fullName = form.querySelector("#fullname");
     const username = form.querySelector("#username");

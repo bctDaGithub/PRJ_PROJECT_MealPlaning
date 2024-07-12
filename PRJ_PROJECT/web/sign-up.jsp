@@ -44,36 +44,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <a class="navbar-brand" href="index.jsp">
-                        <strong><span>Meal</span> Planing</strong>
-                    </a>
-
-                    <div class="d-lg-none">
-                        <a href="sign-in.jsp" class="bi-person custom-icon me-3"></a>
-
-                        <a href="product-detail.jsp" class="bi-bag custom-icon"></a>
-                    </div>
-
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav mx-auto">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="index.jsp">Home</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="about.jsp">Menu</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="products.jsp">Your Meals</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.jsp">Contact</a>
-                            </li>
-                        </ul>
-
-                    </div>
+                    <strong class="navbar-brand" style="font-weight: bold" ><span>Meal</span> Planing</strong>
                 </div>
             </nav>
             <section class="sign-in-form section-padding">
@@ -87,7 +58,7 @@
                             <div class="row">
                                 <div class="col-lg-8 col-11 mx-auto">
                                     <!--Sign Up Form -->
-                                    <form id="signup-form" class="signup-form" role="form" method="post">
+                                    <form id="signup-form" class="signup-form" action="register" role="form" method="post">
                                         <div class="form-floating">
                                             <input type="text" name="username" id="username" class="form-control" placeholder="">
                                             <div class="error"></div>
@@ -164,18 +135,6 @@
                         <p class="copyright-text text-muted mt-lg-5 mb-4 mb-lg-0">Copyright © 2024 <strong>Meal Planing</strong></p>
                         <br>
                         <p class="copyright-text">Designed by <a href="" target="_blank"></a></p>
-                    </div>
-
-                    <div class="col-lg-5 col-8">
-                        <h5 class="text-white mb-3">Sitemap</h5>
-
-                        <ul class="footer-menu d-flex flex-wrap">
-                            <li class="footer-menu-item"><a href="about.jsp" class="footer-menu-link">Menu</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Your Meals</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contact</a></li>
-                        </ul>
                     </div>
 
                     <div class="col-lg-3 col-4">
