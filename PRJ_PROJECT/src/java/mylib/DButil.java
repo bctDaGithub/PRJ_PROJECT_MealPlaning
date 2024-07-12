@@ -10,13 +10,13 @@ import java.sql.DriverManager;
 
 /**
  *
- * @author user
+ * @author khabu
  */
 public class DButil {
     public static Connection makeConnection() throws Exception{
         Connection cn=null;
         String IP="localhost";
-        String instanceName="DESKTOP-IRCVITT";
+        String instanceName="DESKTOP-IQADVQ5";
         String port="1433";
         String uid="sa";
         String pwd="12345";
@@ -28,4 +28,5 @@ public class DButil {
         cn=DriverManager.getConnection(url);
         return cn;
     }
+    
 }
