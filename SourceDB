@@ -12,7 +12,6 @@ CREATE TABLE Users (
     FullName NVARCHAR(50) NOT NULL,
     Password NVARCHAR(50) NOT NULL,
     RoleID INT NOT NULL,
-    Image NVARCHAR(50) NULL,
     Email NVARCHAR(100) NOT NULL,
     Birthday DATE NOT NULL,
     Address NVARCHAR(255),
