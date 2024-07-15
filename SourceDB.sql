@@ -1,4 +1,4 @@
--- Execute this first
+﻿-- Execute this first
 CREATE DATABASE MealPlanningDB;
 
 -- Execute this next
