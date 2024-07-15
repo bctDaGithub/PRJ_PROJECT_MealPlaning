@@ -24,45 +24,64 @@
     <link href="css/bootstrap-icons.css" rel="stylesheet">
     <link href="css/tooplate-little-fashion.css" rel="stylesheet">
     <link href="css/order-style.css" rel="stylesheet"> <!-- CSS riêng cho trang order -->
+    <style>
+        .page-title {
+            margin-top: 80px; /* Điều chỉnh margin-top phù hợp với chiều cao của navbar */
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <%@ include file="navbar.jsp" %>
-    <main class="order-main">
-        <div class="order-content">
-            <div class="dish-details">
-                <img src="<%= dish.getImagePath() %>" alt="<%= dish.getName() %>" class="dish-image">
-                <div class="dish-info">
-                    <h1><%= dish.getName() %></h1>
-                    <p><%= dish.getDescription() %></p>
-                    <p>Calories: <%= dish.getCalories() %></p>
-                    <p>Price: $<%= dish.getEstimatedPrice() %></p>
+    <main style="margin-bottom: 40px;">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 page-title">
+                <h1><%= dish.getName() %></h1>
+            </div>
+            <div class="col-lg-8">
+                <div class="order-content">
+                    <div class="dish-details">
+                        <img src="<%= dish.getImagePath() %>" alt="<%= dish.getName() %>" class="dish-image">
+                        <div class="dish-info">
+                            <h3 class="info-title">Description:</h3>
+                            <p><%= dish.getDescription() %></p>
+                            <h3 class="info-title">Calories:</h3>
+                            <p><%= dish.getCalories() %></p>
+                            <h3 class="info-title">Price:</h3>
+                            <p>$<%= dish.getEstimatedPrice() %></p>
+                            <h3 class="info-title">Ingredients:</h3>
+                            <p><%= dish.getIngredients() %></p>
+                            <h3 class="info-title">Method:</h3>
+                            <p><%= dish.getMethod() %></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="order-form">
-                <form action="place-order.jsp" method="post">
-                    <input type="hidden" name="dishId" value="<%= dish.getId() %>">
-                    <div class="form-group">
-                        <label for="quantity">Quantity:</label>
-                        <input type="number" id="quantity" name="quantity" class="form-control" min="1" value="1" required>
-                    </div>
-                    <button type="submit" class="btn btn-order">Place Order</button>
-                </form>
+            <div class="col-lg-4">
+                <div class="order-form">
+                    <form action="place-order.jsp" method="post">
+                        <input type="hidden" name="dishId" value="<%= dish.getId() %>">
+                        <div class="form-group">
+                            <label for="quantity" class="form-label">Quantity:</label>
+                            <input type="number" id="quantity" name="quantity" class="form-control quantity-input" min="1" value="1" required>
+                        </div>
+                        <button type="submit" class="btn btn-order">Add to cart</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </main>
+    </div>
+</main>
+
+
+
     <%@ include file="footer.jsp" %>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/custom.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
 <%
         } else {
             // Handle dish not found
@@ -73,4 +92,3 @@
         out.println("<h1>Invalid Dish ID!</h1>");
     }
 %>
-

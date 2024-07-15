@@ -5,7 +5,6 @@
 
 package controllers;
 
-import dao.OrderDetailsDAO;
 import dto.OrderDetails;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -33,11 +32,11 @@ public class GetOrderDetailServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String orderid=request.getParameter("orderid");
-            OrderDetailsDAO d=new OrderDetailsDAO();
-            ArrayList<OrderDetails> list=d.getOrderDetails(Integer.parseInt(orderid.trim()));
-            request.setAttribute("ListOrderDetail", list);
-            request.getRequestDispatcher("OrderView").forward(request, response);
+//            String orderid=request.getParameter("orderid");
+//            OrderDAO d=new OrderDetailsDAO();
+//            ArrayList<OrderDetails> list=d.getOrderDetails(Integer.parseInt(orderid.trim()));
+//            request.setAttribute("ListOrderDetail", list);
+//            request.getRequestDispatcher("OrderView").forward(request, response);
         }
     } 
 

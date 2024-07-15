@@ -7,62 +7,109 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Author     : Cong Tuong
 */
 
+/* Body và các thiết lập chung */
+/* Body và các thiết lập chung */
 body {
-    font-family: Arial, sans-serif; /* Kiểu font chữ */
-    background-color: #f8f9fa; /* Màu nền trang */
-    margin-top: 56px; /* Khoảng cách với navbar */
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin-top: 56px;
 }
 
+/* order-style.css */
+
+.info-title {
+    font-size: 1.5rem; /* Adjust the font size for info titles */
+    margin-bottom: 5px; /* Add some space below each title */
+}
+
+.quantity-input {
+    font-size: 1.2rem; /* Increase the font size of quantity input */
+}
+
+/* Phần chính của trang order */
 .order-main {
-    margin-bottom: 56px; /* Khoảng cách với footer */
+    margin-bottom: 56px;
 }
 
-.container {
-    max-width: 800px; /* Chiều rộng tối đa của phần chi tiết món ăn */
+/* Phần nội dung chi tiết món ăn */
+.order-content {
+    max-width: 800px;
     margin: auto;
     padding: 20px;
-    background-color: #ffffff; /* Màu nền cho phần chi tiết món ăn */
+    background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* Đổ bóng cho phần chi tiết */
-    overflow: hidden; /* Ngăn chặn tràn nội dung */
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 
+/* Hình ảnh món ăn */
 .dish-image {
-    float: left; /* Đẩy hình ảnh sang trái */
-    width: 200px; /* Kích thước cố định cho hình ảnh */
+    float: left;
+    width: 200px;
     height: auto;
-    margin-right: 20px; /* Khoảng cách với nội dung */
-    border-radius: 8px; /* Đường viền cong cho hình ảnh */
+    margin-right: 20px;
+    border-radius: 8px;
 }
 
+/* Phần thông tin chi tiết món ăn */
 .dish-info {
-    overflow: hidden; /* Ngăn chặn tràn nội dung */
+    overflow: hidden;
 }
 
+/* Định dạng đề mục và nội dung chi tiết */
+.dish-properties {
+    margin-top: 10px;
+}
+
+.dish-properties dt {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.dish-properties dd {
+    margin-bottom: 10px;
+}
+
+/* Form đặt hàng */
 .order-form {
     margin-top: 20px;
 }
 
+/* Định dạng ô nhập và nút Order */
 .form-group {
-    margin-bottom: 10px; /* Khoảng cách giữa các ô nhập */
+    margin-bottom: 10px;
 }
 
 #quantity {
-    width: 60px; /* Độ rộng thu nhỏ của ô quantity */
+    width: 60px;
+    font-size: 1rem;
 }
 
 .btn-order {
-    background-color: #dc3545; /* Màu đỏ cho nút Order */
-    border-color: #dc3545; /* Đường viền màu đỏ */
-    color: #ffffff; /* Màu chữ trắng */
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #343a40; /* Màu nền footer */
-    color: #ffffff; /* Màu chữ footer */
-    text-align: center;
-    padding: 10px 0;
+.btn-order:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
 }
+
+
+.btn-order {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+}
+
+.btn-order:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+
