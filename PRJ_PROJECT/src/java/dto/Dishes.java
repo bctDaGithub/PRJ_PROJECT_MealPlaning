@@ -9,68 +9,94 @@ package dto;
  * @author Cong Tuong
  */
 public class Dishes {
-
-    private String dishId;
-    private String dishName;
+    private int id;
+    private String name;
     private String description;
-    private String price;
-    private String category;
-    private boolean available;
+    private int calories;
+    private int estimatedPrice;
+    private String ingredients;
+    private String method;
+    private String imagePath;
 
-    public Dishes(String dishId, String dishName, String description, String price, String category, boolean available) {
-        this.dishId = dishId;
-        this.dishName = dishName;
+    public Dishes(int id, String name, String description, int calories, int estimatedPrice, String ingredients, String method, String imagePath) {
+        this.id = id;
+        this.name = name;
         this.description = description;
-        this.price = price;
-        this.category = category;
-        this.available = available;
+        this.calories = calories;
+        this.estimatedPrice = estimatedPrice;
+        this.ingredients = ingredients;
+        this.method = method;
+        this.imagePath = imagePath;
     }
 
-    public String getDishId() {
-        return dishId;
+    public int getId() {
+        return id;
     }
 
-    public String getDishName() {
-        return dishName;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public String getPrice() {
-        return price;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public boolean isAvailable() {
-        return available;
-    }
-
-    public void setDishId(String dishId) {
-        this.dishId = dishId;
-    }
-
-    public void setDishName(String dishName) {
-        this.dishName = dishName;
-    }
-
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public int getCalories() {
+        return calories;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setCalories(int calories) {
+        this.calories = calories;
     }
 
-    public void setAvailable(boolean available) {
-        this.available = available;
+    public int getEstimatedPrice() {
+        return estimatedPrice;
     }
+
+    public void setEstimatedPrice(int estimatedPrice) {
+        this.estimatedPrice = estimatedPrice;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public String getMethod() {
+        return method;
+    }
+
+    public void setMethod(String method) {
+        this.method = method;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    @Override
+    public String toString() {
+        return "Dishes{" + "id=" + id + ", name=" + name + ", description=" + description + ", calories=" + calories + ", estimatedPrice=" + estimatedPrice + ", ingredients=" + ingredients + ", method=" + method + ", imagePath=" + imagePath + '}';
+    }
+    
+    
 }

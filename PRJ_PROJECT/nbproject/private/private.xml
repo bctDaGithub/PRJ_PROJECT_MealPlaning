@@ -3,17 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/khabu/Downloads/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT/src/java/dao/OrdersDAO.java</file>
-            <file>file:/C:/Users/khabu/Downloads/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT/src/java/controllers/ManageOrderServlet.java</file>
-            <file>file:/C:/Users/khabu/Downloads/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT/web/js/profile.js</file>
-            <file>file:/C:/Users/khabu/Downloads/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT/src/java/dao/UserDAO.java</file>
-            <file>file:/C:/Users/khabu/Downloads/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT/src/java/controllers/login/LoginServlet.java</file>
-            <file>file:/C:/Users/khabu/Downloads/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT/web/js/signup.js</file>
-            <file>file:/C:/Users/khabu/Downloads/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT/src/java/controllers/login/LogoutServlet.java</file>
-            <file>file:/C:/Users/khabu/Downloads/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT/src/java/controllers/login/EditProfileServlet.java</file>
-            <file>file:/C:/Users/khabu/Downloads/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT/web/sign-up.jsp</file>
-            <file>file:/C:/Users/khabu/Downloads/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT/src/java/controllers/login/SignUpServlet.java</file>
-            <file>file:/C:/Users/khabu/Downloads/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT_MealPlaning-main/PRJ_PROJECT/web/profile.jsp</file>
+            <file>file:/C:/Users/Cong%20Tuong/Documents/GitHub/PRJ_PROJECT_MealPlaning/PRJ_PROJECT/src/java/dao/OrderDetailsDAO.java</file>
+            <file>file:/C:/Users/Cong%20Tuong/Documents/GitHub/PRJ_PROJECT_MealPlaning/PRJ_PROJECT/src/java/mylib/DButil.java</file>
+            <file>file:/C:/Users/Cong%20Tuong/Documents/GitHub/PRJ_PROJECT_MealPlaning/PRJ_PROJECT/src/java/dao/DishDAO.java</file>
+            <file>file:/C:/Users/Cong%20Tuong/Documents/GitHub/PRJ_PROJECT_MealPlaning/PRJ_PROJECT/web/index.jsp</file>
+            <file>file:/C:/Users/Cong%20Tuong/Documents/GitHub/PRJ_PROJECT_MealPlaning/PRJ_PROJECT/web/product-detail.jsp</file>
+            <file>file:/C:/Users/Cong%20Tuong/Documents/GitHub/PRJ_PROJECT_MealPlaning/PRJ_PROJECT/web/navbar.jsp</file>
+            <file>file:/C:/Users/Cong%20Tuong/Documents/GitHub/PRJ_PROJECT_MealPlaning/PRJ_PROJECT/src/java/dto/Dishes.java</file>
+            <file>file:/C:/Users/Cong%20Tuong/Documents/GitHub/PRJ_PROJECT_MealPlaning/PRJ_PROJECT/web/order.jsp</file>
+            <file>file:/C:/Users/Cong%20Tuong/Documents/GitHub/PRJ_PROJECT_MealPlaning/PRJ_PROJECT/web/list-dishes.jsp</file>
+            <file>file:/C:/Users/Cong%20Tuong/Documents/GitHub/PRJ_PROJECT_MealPlaning/PRJ_PROJECT/web/products.jsp</file>
+            <file>file:/C:/Users/Cong%20Tuong/Documents/GitHub/PRJ_PROJECT_MealPlaning/PRJ_PROJECT/web/home.jsp</file>
+            <file>file:/C:/Users/Cong%20Tuong/Documents/GitHub/PRJ_PROJECT_MealPlaning/PRJ_PROJECT/web/css/profile.css</file>
+            <file>file:/C:/Users/Cong%20Tuong/Documents/GitHub/PRJ_PROJECT_MealPlaning/PRJ_PROJECT/web/footer.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -32,6 +32,10 @@
         <servlet-name>SignUpServlet</servlet-name>
         <servlet-class>controllers.login.SignUpServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>getlist</servlet-name>
+        <servlet-class>controllers.GetListController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GetOrderDetailServlet</servlet-name>
         <url-pattern>/GetOrderDetailServlet</url-pattern>
@@ -59,6 +63,10 @@
     <servlet-mapping>
         <servlet-name>SignUpServlet</servlet-name>
         <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getlist</servlet-name>
+        <url-pattern>/getlist</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

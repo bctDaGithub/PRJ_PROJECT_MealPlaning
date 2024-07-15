@@ -1,32 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mylib;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
- *
- * @author khabu
+ * Do not change this code
  */
 public class DButil {
-    public static Connection makeConnection() throws Exception{
-        Connection cn=null;
-        String IP="localhost";
-        String instanceName="DESKTOP-IQADVQ5";
-        String port="1433";
-        String uid="sa";
-        String pwd="12345";
-        String db="MealPlanningDB";
-        String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
-        String url="jdbc:sqlserver://" +IP+"\\"+ instanceName+":"+port
-                 +";databasename="+db+";user="+uid+";password="+pwd;
-        Class.forName(driver);
-        cn=DriverManager.getConnection(url);
-        return cn;
+
+    private static final String DB_NAME = "MealPlanningDB";
+    private static final String PASSWORD = "12345";
+    private static final String USER_NAME = "SA";
+
+    public static Connection makeConnection() throws ClassNotFoundException, SQLException {
+        Connection conn = null;
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        String url = "jdbc:sqlserver://localhost:1433;databaseName=" + DB_NAME;
+        conn = DriverManager.getConnection(url, USER_NAME, PASSWORD);
+        return conn;
     }
     
 }

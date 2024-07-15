@@ -30,6 +30,9 @@
                     <a class="nav-link" href="about.jsp">Menu</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="list-dishes.jsp">Foods</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="products.jsp">Your Meals</a>
                 </li>
                 <li class="nav-item">
