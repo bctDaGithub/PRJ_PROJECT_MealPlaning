@@ -17,7 +17,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title style="color: rgb(247, 72, 20)">List of Foods</title>
         <title>Foods</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,10 +43,6 @@
             .card-body .btn {
                 margin-top: auto;
             }
-            .page-title {
-                margin-top: 80px; /* Điều chỉnh margin-top phù hợp với chiều cao của navbar */
-                text-align: center;
-            }
         </style>
     </head>
     <body>
@@ -60,11 +55,6 @@
                         <div class="card w-100">
                             <img src="<%= dish.getImagePath() %>" class="card-img-top" alt="<%= dish.getName() %>">
                             <div class="card-body">
-                                <h5 class="card-title"><%= dish.getName()%></h5>
-                                <p class="card-text"><%= dish.getDescription()%></p>
-                                <p class="card-text">Calories: <%= dish.getCalories()%></p>
-                                <p class="card-text">Price: $<%= dish.getEstimatedPrice()%></p>
-                                <a href="main?dishId=<%= dish.getId()%>&action=view-food" class="btn btn-primary">View & Order</a>
                                 <h5 class="card-title"><%= dish.getName() %></h5>
                                 <p class="card-text"><%= dish.getDescription() %></p>
                                 <p class="card-text">Calories: <%= dish.getCalories() %></p>
@@ -73,16 +63,6 @@
                             </div>
                         </div>
                     </div>
-                    <%
-                        }
-                    } else {
-                    %>
-                    <div class="col-12">
-                        <p>No dishes found.</p>
-                    </div>
-                    <%
-                        }
-                    %>
                     <% } %>
                 </div>
             </div>
@@ -92,5 +72,4 @@
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/custom.js"></script>
     </body>
-</html>
 </html>

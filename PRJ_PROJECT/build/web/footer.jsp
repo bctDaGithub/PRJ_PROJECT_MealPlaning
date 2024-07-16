@@ -1,6 +1,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<footer style="flex-shrink: 0" class="site-footer">
+<footer class="site-footer">
             <div class="container">
                 <div class="row">
 

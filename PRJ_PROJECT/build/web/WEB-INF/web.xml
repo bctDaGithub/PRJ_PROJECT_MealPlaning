@@ -36,30 +36,6 @@
         <servlet-name>getlist</servlet-name>
         <servlet-class>controllers.GetListController</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>main</servlet-name>
-        <servlet-class>controllers.MainController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>list-dishes</servlet-name>
-        <servlet-class>controllers.ListDishesServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>view-food</servlet-name>
-        <servlet-class>controllers.ViewFoodServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>add-to-cart</servlet-name>
-        <servlet-class>controllers.AddToCartServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>view-cart</servlet-name>
-        <servlet-class>controllers.ViewCartServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>PlaceOrderServlet</servlet-name>
-        <servlet-class>controllers.PlaceOrderServlet</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>GetOrderDetailServlet</servlet-name>
         <url-pattern>/GetOrderDetailServlet</url-pattern>
