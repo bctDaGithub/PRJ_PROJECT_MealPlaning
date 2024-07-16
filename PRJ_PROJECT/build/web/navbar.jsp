@@ -1,5 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="javax.servlet.http.HttpSession"%>
+
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="javax.servlet.http.HttpSession"%>
 
@@ -55,7 +54,6 @@
                     <a class="nav-link" href="about.jsp">Menu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="main?action=list-dishes">Foods</a>
                     <a class="nav-link" href="list-dishes.jsp">Foods</a>
                 </li>
                 <li class="nav-item">
