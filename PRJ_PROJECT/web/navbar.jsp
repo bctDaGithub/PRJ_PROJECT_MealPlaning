@@ -42,7 +42,7 @@
 
             <div class="d-none d-lg-block">
                 <a href="<%= userPage%>" class="user bi-person custom-icon me-3"></a>
-                <a href="product-detail.jsp" class="bi-bag custom-icon"></a>
+                <a href="main?action=view-cart" class="bi-bag custom-icon"></a>
             </div>
         </div>
     </div>

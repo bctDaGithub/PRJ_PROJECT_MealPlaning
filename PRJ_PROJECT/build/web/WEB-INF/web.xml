@@ -52,6 +52,10 @@
         <servlet-name>add-to-cart</servlet-name>
         <servlet-class>controllers.AddToCartServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>view-cart</servlet-name>
+        <servlet-class>controllers.ViewCartServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GetOrderDetailServlet</servlet-name>
         <url-pattern>/GetOrderDetailServlet</url-pattern>
@@ -99,6 +103,10 @@
     <servlet-mapping>
         <servlet-name>add-to-cart</servlet-name>
         <url-pattern>/add-to-cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>view-cart</servlet-name>
+        <url-pattern>/view-cart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -5,7 +5,6 @@
 package dto;
 
 import java.util.Date;
-import java.util.Objects;
 
 /**
  *
@@ -18,6 +17,8 @@ public class Order {
     private String status;
     private int total;
     private int userId;
+    
+    public Order(){}
 
     public Order(int orderId, Date orderDate, String status, int total, int userId) {
         this.orderId = orderId;
