@@ -40,7 +40,7 @@ public class Order {
         return status;
     }
 
-    public double getTotal() {
+    public int getTotal() {
         return total;
     }
 

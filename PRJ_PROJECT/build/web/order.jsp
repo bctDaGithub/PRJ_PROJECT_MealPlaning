@@ -19,7 +19,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title><%= dish.getName()%> - Order</title>
+        <title style="color: rgb(247, 72, 20)"><%= dish.getName()%> - Order</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-icons.css" rel="stylesheet">
         <link href="css/tooplate-little-fashion.css" rel="stylesheet">
@@ -37,7 +37,7 @@
             <div class="container mt-5">
                 <div class="row">
                     <div class="col-12 page-title">
-                        <h1><%= dish.getName()%></h1>
+                        <h1 style="color: rgb(247, 72, 20)"><%= dish.getName()%></h1>
                     </div>
                     <div class="col-lg-8">
                         <div class="order-content">

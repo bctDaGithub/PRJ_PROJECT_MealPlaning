@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>List of Foods</title>
+        <title style="color: rgb(247, 72, 20)">List of Foods</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
@@ -49,7 +49,7 @@
             <div class="container mt-5">
                 <div class="row">
                     <div class="col-12 page-title">
-                        <h1>List of Foods</h1>
+                        <h1 style="color: rgb(247, 72, 20)">List of Foods</h1>
                     </div>
                     <%                        List<Dishes> dishesList = (List<Dishes>) request.getAttribute("dishesList");
                         if (dishesList != null) {
