@@ -79,39 +79,22 @@ public class UserDAO extends DButil {
         return 0;
     }
 
-    public List<Account> getAllUsers() {
-        List<Account> list = new ArrayList<>();
-        String sql = "SELECT * FROM Users WHERE [status] = 1 ORDER BY roleID ASC";
-        Connection connection = null;
-        PreparedStatement st = null;
-        ResultSet rs = null;
-        try {
-            connection = DButil.makeConnection();
-            st = connection.prepareStatement(sql);
-            rs = st.executeQuery();
-            while (rs.next()) {
-                list.add(new Account(rs.getString("userName"), rs.getString("fullName"), rs.getString("password"),
-                        rs.getString("address"), rs.getString("phone"), rs.getString("email"), rs.getString("BirthDay"), rs.getInt("roleID")));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (st != null) {
-                    st.close();
-                }
-                if (connection != null) {
-                    connection.close();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+   public List<Account> getAllUsers() {
+    List<Account> list = new ArrayList<>();
+    String sql = "SELECT * FROM Users WHERE [status] = 1 ORDER BY roleID ASC";
+    try (Connection connection = DButil.makeConnection();
+         PreparedStatement st = connection.prepareStatement(sql);
+         ResultSet rs = st.executeQuery()) {
+        while (rs.next()) {
+            list.add(new Account(rs.getString("userName"), rs.getString("fullName"), rs.getString("password"),
+                    rs.getString("address"), rs.getString("phone"), rs.getString("email"), rs.getString("BirthDay"), rs.getInt("roleID")));
         }
-        return list;
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+    return list;
+}
+
 
     public boolean checkUserNameDuplicate(String username) {
         String sql = "SELECT * FROM Users WHERE userName = ? and [status] = 1";
@@ -144,31 +127,6 @@ public class UserDAO extends DButil {
         return false;
     }
 
-    public void updateImage(String image, String userName) {
-        String sql = "UPDATE Users SET Image = ? WHERE userName = ? and [status] = 1";
-        Connection connection = null;
-        PreparedStatement st = null;
-        try {
-            connection = DButil.makeConnection();
-            st = connection.prepareStatement(sql);
-            st.setString(1, image);
-            st.setString(2, userName);
-            st.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (st != null) {
-                    st.close();
-                }
-                if (connection != null) {
-                    connection.close();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
     public void update(String fullname, String address, String phone, String email, String dob, String userName) {
         String sql = "UPDATE Users SET fullName = ?, address = ?, phone = ?, email = ?, BirthDay = ? WHERE userName = ?";
