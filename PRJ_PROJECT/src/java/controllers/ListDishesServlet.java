@@ -5,22 +5,21 @@
 
 package controllers;
 
-import dao.OrdersDAO;
-import dto.Order;
+import dao.DishDAO;
+import dto.Dishes;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Cong Tuong
  */
-public class ManageOrderServlet extends HttpServlet {
+public class ListDishesServlet extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -34,12 +33,11 @@ public class ManageOrderServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String status = request.getParameter("txtstatus");
-            OrdersDAO d = new OrdersDAO();
-            ArrayList<Order> list = d.getAllOrders(Integer.parseInt(status.trim()));
-            HttpSession session = request.getSession();
-            session.setAttribute("ListOrders", list);
-            response.sendRedirect("OrderView");
+             DishDAO dishDAO = new DishDAO();
+        List<Dishes> dishesList = dishDAO.getAllDishes();
+        
+        request.setAttribute("dishesList", dishesList);
+        request.getRequestDispatcher("list-dishes.jsp").forward(request, response);
         }
     } 
 

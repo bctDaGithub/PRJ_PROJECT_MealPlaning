@@ -5,23 +5,20 @@
 
 package controllers;
 
-import dao.OrdersDAO;
-import dto.Order;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Cong Tuong
  */
-public class ManageOrderServlet extends HttpServlet {
-   
+public class MainController extends HttpServlet {
+    private static final String ERROR = "login.jsp";
+
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      * @param request servlet request
@@ -32,14 +29,36 @@ public class ManageOrderServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            String status = request.getParameter("txtstatus");
-            OrdersDAO d = new OrdersDAO();
-            ArrayList<Order> list = d.getAllOrders(Integer.parseInt(status.trim()));
-            HttpSession session = request.getSession();
-            session.setAttribute("ListOrders", list);
-            response.sendRedirect("OrderView");
+        String url = ERROR;
+        try {
+            String action = request.getParameter("action");
+            if (action == null) {
+                url = "login.jsp";
+            }
+            switch (action) {
+                case "login":
+                    url = "login";
+                    break;
+                case "logout":
+                    url = "logout";
+                    break;
+                case "list-dishes":
+                    url = "list-dishes";
+                    break;
+                case "view-food":
+                    url = "view-food";
+                    break;
+                case "add-to-cart":
+                    url = "add-to-cart";
+                    break;
+                default:
+                    throw new AssertionError();
+            }
+            
+        } catch (Exception e) {
+            log("Error at MainController: " + e.toString());
+        } finally {
+            request.getRequestDispatcher(url).forward(request, response);
         }
     } 
 

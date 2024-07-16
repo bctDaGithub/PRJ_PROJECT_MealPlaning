@@ -5,7 +5,7 @@
 package dao;
 
 import dto.OrderDetails;
-import dto.Orders;
+import dto.Order;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -18,12 +18,12 @@ import mylib.DButil;
  *
  * @author Cong Tuong
  */
-public class OrdersDAO implements DAOInterface<Orders> {
+public class OrdersDAO implements DAOInterface<Order> {
 
-    ArrayList<Orders> data = new ArrayList<>();
+    ArrayList<Order> data = new ArrayList<>();
     
-    public ArrayList<Orders> getAllOrders (int status){
-        ArrayList<Orders> list=new ArrayList<>();
+    public ArrayList<Order> getAllOrders (int status){
+        ArrayList<Order> list=new ArrayList<>();
         Connection cn=null;
         try {
             //b1tao ket noi
@@ -35,7 +35,7 @@ public class OrdersDAO implements DAOInterface<Orders> {
                 pst.setInt(1, status);
                 ResultSet rs = pst.executeQuery();
                 
-                // Bước 3: Duyệt qua kết quả và tạo đối tượng Orders
+                // Bước 3: Duyệt qua kết quả và tạo đối tượng Order
                 while (rs.next()) {
                     int orderId = rs.getInt("orderId");
                     Date orderDate = rs.getDate("orderDate");
@@ -43,8 +43,8 @@ public class OrdersDAO implements DAOInterface<Orders> {
                     int total = rs.getInt("total");
                     int userId = rs.getInt("userId");
 
-                    // Tạo đối tượng Orders và thêm vào danh sách
-                    Orders order = new Orders(orderId, orderDate, orderStatus, total, userId);
+                    // Tạo đối tượng Order và thêm vào danh sách
+                    Order order = new Order(orderId, orderDate, orderStatus, total, userId);
                     list.add(order);
                 }
                 rs.close();
@@ -63,7 +63,7 @@ public class OrdersDAO implements DAOInterface<Orders> {
         return list;
     }
     
-    public int insertOrder(Orders order) {
+    public int insertOrder(Order order) {
         Connection cn = null;
         int orderId = -1;
         try {
@@ -143,13 +143,13 @@ public class OrdersDAO implements DAOInterface<Orders> {
 
 
     @Override
-    public ArrayList<Orders> selectAll() {
+    public ArrayList<Order> selectAll() {
         return this.data;
     }
 
     @Override
-    public Orders selectById(Orders t) {
-        for (Orders orders : data) {
+    public Order selectById(Order t) {
+        for (Order orders : data) {
             if (data.equals(t)) {
                 return orders;
             }
@@ -158,7 +158,7 @@ public class OrdersDAO implements DAOInterface<Orders> {
     }
 
     @Override
-    public int insert(Orders t) {
+    public int insert(Order t) {
         if (this.selectById(t) == null) {
             this.data.add(t);
             return 1;
@@ -167,15 +167,15 @@ public class OrdersDAO implements DAOInterface<Orders> {
     }
 
     @Override
-    public int insertAll(ArrayList<Orders> arr) {
-        for (Orders orders : arr) {
+    public int insertAll(ArrayList<Order> arr) {
+        for (Order orders : arr) {
             this.insert(orders);
         }
         return 0;
     }
 
     @Override
-    public int delete(Orders t) {
+    public int delete(Order t) {
         if (selectById(t) != null) {
             this.data.remove(t);
             return 1;
@@ -184,15 +184,15 @@ public class OrdersDAO implements DAOInterface<Orders> {
     }
 
     @Override
-    public int deleteAll(ArrayList<Orders> arr) {
-        for (Orders orders : arr) {
+    public int deleteAll(ArrayList<Order> arr) {
+        for (Order orders : arr) {
             this.delete(orders);
         }
         return 0;
     }
 
     @Override
-    public int update(Orders t) {
+    public int update(Order t) {
         if (selectById(t) != null) {
             this.data.remove(t);
             this.data.add(t);

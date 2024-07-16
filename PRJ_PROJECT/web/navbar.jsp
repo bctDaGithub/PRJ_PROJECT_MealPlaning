@@ -17,7 +17,7 @@
         </a>
 
         <div class="d-lg-none">
-            <a href="<%= userPage %>" class="bi-person custom-icon me-3"></a>
+            <a href="<%= userPage%>" class="bi-person custom-icon me-3"></a>
             <a href="product-detail.jsp" class="bi-bag custom-icon"></a>
         </div>
 
@@ -30,7 +30,7 @@
                     <a class="nav-link" href="about.jsp">Menu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="list-dishes.jsp">Foods</a>
+                    <a class="nav-link" href="main?action=list-dishes">Foods</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="products.jsp">Your Meals</a>
@@ -41,7 +41,7 @@
             </ul>
 
             <div class="d-none d-lg-block">
-                <a href="<%= userPage %>" class="user bi-person custom-icon me-3"></a>
+                <a href="<%= userPage%>" class="user bi-person custom-icon me-3"></a>
                 <a href="product-detail.jsp" class="bi-bag custom-icon"></a>
             </div>
         </div>

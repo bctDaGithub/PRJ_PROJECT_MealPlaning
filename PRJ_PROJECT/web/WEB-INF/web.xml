@@ -36,6 +36,22 @@
         <servlet-name>getlist</servlet-name>
         <servlet-class>controllers.GetListController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>main</servlet-name>
+        <servlet-class>controllers.MainController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>list-dishes</servlet-name>
+        <servlet-class>controllers.ListDishesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>view-food</servlet-name>
+        <servlet-class>controllers.ViewFoodServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>add-to-cart</servlet-name>
+        <servlet-class>controllers.AddToCartServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GetOrderDetailServlet</servlet-name>
         <url-pattern>/GetOrderDetailServlet</url-pattern>
@@ -67,6 +83,22 @@
     <servlet-mapping>
         <servlet-name>getlist</servlet-name>
         <url-pattern>/getlist</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>main</servlet-name>
+        <url-pattern>/main</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>list-dishes</servlet-name>
+        <url-pattern>/list-dishes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>view-food</servlet-name>
+        <url-pattern>/view-food</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>add-to-cart</servlet-name>
+        <url-pattern>/add-to-cart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

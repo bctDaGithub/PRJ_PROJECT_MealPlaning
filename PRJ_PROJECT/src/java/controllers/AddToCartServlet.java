@@ -5,8 +5,10 @@
 
 package controllers;
 
-import dao.OrdersDAO;
+import dao.DishDAO;
+import dto.Dishes;
 import dto.Order;
+import dto.OrderDetails;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -20,7 +22,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Cong Tuong
  */
-public class ManageOrderServlet extends HttpServlet {
+public class AddToCartServlet extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -32,14 +34,57 @@ public class ManageOrderServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            String status = request.getParameter("txtstatus");
-            OrdersDAO d = new OrdersDAO();
-            ArrayList<Order> list = d.getAllOrders(Integer.parseInt(status.trim()));
-            HttpSession session = request.getSession();
-            session.setAttribute("ListOrders", list);
-            response.sendRedirect("OrderView");
+          try {
+            // Get parameters from the form
+            int dishId = Integer.parseInt(request.getParameter("dishId"));
+            int quantity = Integer.parseInt(request.getParameter("quantity"));
+
+            // Fetch dish information from database
+            DishDAO dishDAO = new DishDAO();
+            Dishes dish = dishDAO.getDishById(dishId);
+
+            if (dish != null) {
+                // Calculate total price
+                int totalPrice = dish.getEstimatedPrice() * quantity;
+
+                // Create OrderDetails object
+                OrderDetails orderDetail = new OrderDetails();
+                orderDetail.setDishId(dishId);
+                orderDetail.setDishname(dish.getName());
+                orderDetail.setQuantity(quantity);
+                orderDetail.setImageUrl(dish.getImagePath());
+                orderDetail.setPrice(dish.getEstimatedPrice());
+
+                // Check if there's an existing cart in session
+                ArrayList<OrderDetails> cart;
+                if (request.getSession().getAttribute("cart") == null) {
+                    cart = new ArrayList<>();
+                } else {
+                    cart = (ArrayList<OrderDetails>) request.getSession().getAttribute("cart");
+                }
+
+                // Add orderDetail to cart
+                cart.add(orderDetail);
+
+                // Update session attribute
+                request.getSession().setAttribute("cart", cart);
+
+                // Set success message
+                request.setAttribute("addToCartSuccess", true);
+
+                // Forward to order.jsp
+                request.getRequestDispatcher("order.jsp").forward(request, response);
+            } else {
+                // Dish not found
+                request.setAttribute("addToCartSuccess", false);
+                request.getRequestDispatcher("order.jsp").forward(request, response);
+            }
+
+        } catch (Exception e) {
+            // Error occurred
+            request.setAttribute("addToCartSuccess", false);
+            request.getRequestDispatcher("order.jsp").forward(request, response);
+            e.printStackTrace();
         }
     } 
 

@@ -7,12 +7,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
 <%@page import="dto.Dishes"%>
-<%@page import="dao.DishDAO"%>
-<%
-    // Fetch the list of dishes from the database
-    DishDAO dishDAO = new DishDAO();
-    List<Dishes> dishesList = dishDAO.getAllDishes();
-%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -57,20 +51,32 @@
                     <div class="col-12 page-title">
                         <h1>List of Foods</h1>
                     </div>
-                    <% for(Dishes dish : dishesList) { %>
+                    <%                        List<Dishes> dishesList = (List<Dishes>) request.getAttribute("dishesList");
+                        if (dishesList != null) {
+                            for (Dishes dish : dishesList) {
+                    %>
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex">
                         <div class="card w-100">
-                            <img src="<%= dish.getImagePath() %>" class="card-img-top" alt="<%= dish.getName() %>">
+                            <img src="<%= dish.getImagePath()%>" class="card-img-top" alt="<%= dish.getName()%>">
                             <div class="card-body">
-                                <h5 class="card-title"><%= dish.getName() %></h5>
-                                <p class="card-text"><%= dish.getDescription() %></p>
-                                <p class="card-text">Calories: <%= dish.getCalories() %></p>
-                                <p class="card-text">Price: $<%= dish.getEstimatedPrice() %></p>
-                                <a href="order.jsp?dishId=<%= dish.getId() %>" class="btn btn-primary">View & Order</a>
+                                <h5 class="card-title"><%= dish.getName()%></h5>
+                                <p class="card-text"><%= dish.getDescription()%></p>
+                                <p class="card-text">Calories: <%= dish.getCalories()%></p>
+                                <p class="card-text">Price: $<%= dish.getEstimatedPrice()%></p>
+                                <a href="main?dishId=<%= dish.getId()%>&action=view-food" class="btn btn-primary">View & Order</a>
                             </div>
                         </div>
                     </div>
-                    <% } %>
+                    <%
+                        }
+                    } else {
+                    %>
+                    <div class="col-12">
+                        <p>No dishes found.</p>
+                    </div>
+                    <%
+                        }
+                    %>
                 </div>
             </div>
         </main>

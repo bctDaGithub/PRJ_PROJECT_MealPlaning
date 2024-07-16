@@ -17,7 +17,9 @@ public class OrderDetails {
     private int orderId;
     private String imageUrl;
     private int price;
-
+    
+    public OrderDetails(){}
+    
     public OrderDetails(int detailId, int dishId, String dishname, int quantity, int orderId, String imageUrl, int price) {
         this.detailId = detailId;
         this.dishId = dishId;
