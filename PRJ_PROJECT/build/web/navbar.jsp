@@ -28,6 +28,7 @@
         </button>
 
         <a class="navbar-brand" href="index.jsp">
+            <strong><span>Meal</span> Planning</strong>
         </a>
 
         <div class="d-lg-none">
