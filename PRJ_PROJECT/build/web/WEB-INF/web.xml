@@ -92,30 +92,6 @@
         <servlet-name>getlist</servlet-name>
         <url-pattern>/getlist</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>main</servlet-name>
-        <url-pattern>/main</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>list-dishes</servlet-name>
-        <url-pattern>/list-dishes</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>view-food</servlet-name>
-        <url-pattern>/view-food</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>add-to-cart</servlet-name>
-        <url-pattern>/add-to-cart</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>view-cart</servlet-name>
-        <url-pattern>/view-cart</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PlaceOrderServlet</servlet-name>
-        <url-pattern>/PlaceOrderServlet</url-pattern>
-    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

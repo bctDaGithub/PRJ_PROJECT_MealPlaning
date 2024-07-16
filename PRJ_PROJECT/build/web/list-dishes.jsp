@@ -7,11 +7,18 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
 <%@page import="dto.Dishes"%>
+<%@page import="dao.DishDAO"%>
+<%
+    // Fetch the list of dishes from the database
+    DishDAO dishDAO = new DishDAO();
+    List<Dishes> dishesList = dishDAO.getAllDishes();
+%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title style="color: rgb(247, 72, 20)">List of Foods</title>
+        <title>Foods</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
@@ -48,22 +55,21 @@
         <main>
             <div class="container mt-5">
                 <div class="row">
-                    <div class="col-12 page-title">
-                        <h1 style="color: rgb(247, 72, 20)">List of Foods</h1>
-                    </div>
-                    <%                        List<Dishes> dishesList = (List<Dishes>) request.getAttribute("dishesList");
-                        if (dishesList != null) {
-                            for (Dishes dish : dishesList) {
-                    %>
+                    <% for(Dishes dish : dishesList) { %>
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex">
                         <div class="card w-100">
-                            <img src="<%= dish.getImagePath()%>" class="card-img-top" alt="<%= dish.getName()%>">
+                            <img src="<%= dish.getImagePath() %>" class="card-img-top" alt="<%= dish.getName() %>">
                             <div class="card-body">
                                 <h5 class="card-title"><%= dish.getName()%></h5>
                                 <p class="card-text"><%= dish.getDescription()%></p>
                                 <p class="card-text">Calories: <%= dish.getCalories()%></p>
                                 <p class="card-text">Price: $<%= dish.getEstimatedPrice()%></p>
                                 <a href="main?dishId=<%= dish.getId()%>&action=view-food" class="btn btn-primary">View & Order</a>
+                                <h5 class="card-title"><%= dish.getName() %></h5>
+                                <p class="card-text"><%= dish.getDescription() %></p>
+                                <p class="card-text">Calories: <%= dish.getCalories() %></p>
+                                <p class="card-text">Price: $<%= dish.getEstimatedPrice() %></p>
+                                <a href="order.jsp?dishId=<%= dish.getId() %>" class="btn btn-primary">View & Order</a>
                             </div>
                         </div>
                     </div>
@@ -77,6 +83,7 @@
                     <%
                         }
                     %>
+                    <% } %>
                 </div>
             </div>
         </main>
@@ -85,4 +92,5 @@
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/custom.js"></script>
     </body>
+</html>
 </html>
